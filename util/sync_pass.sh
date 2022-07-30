@@ -115,9 +115,9 @@ function sync_pass(){
     if [[ $env_allow_async == 1 && -n "$fetch_spec_a" && -n "$fetch_spec_b" ]]; then
         echo;echo "> Fetch (async)"
 
-        git fetch --no-tags $origin_a $fetch_spec_a > "$path_async_output/fetch_a.txt" &
+        git fetch $origin_a $fetch_spec_a > "$path_async_output/fetch_a.txt" &
         pid_fetch_a=$!
-        git fetch --no-tags $origin_b $fetch_spec_b > "$path_async_output/fetch_b.txt" &
+        git fetch $origin_b $fetch_spec_b > "$path_async_output/fetch_b.txt" &
         pid_fetch_b=$!
         
         fetch_report_a="> Fetch $origin_a "
@@ -136,12 +136,12 @@ function sync_pass(){
         if [[ -n "$fetch_spec_a" ]]; then
             echo;echo "> Fetch $origin_a (sync)"
             echo $fetch_spec_a
-            git fetch --no-tags $origin_a $fetch_spec_a
+            git fetch $origin_a $fetch_spec_a
         fi;
         if [[ -n "$fetch_spec_b" ]]; then
             echo;echo "> Fetch $origin_b (sync)"
             echo $fetch_spec_b
-            git fetch --no-tags $origin_b $fetch_spec_b
+            git fetch $origin_b $fetch_spec_b
         fi;
     fi;
 
@@ -294,9 +294,9 @@ function sync_pass(){
     if [[ $env_allow_async == 1 && -n "$post_fetch_spec_a" && -n "$post_fetch_spec_b" ]]; then
         echo;echo "> Post-fetch (async)"
 
-        git fetch --no-tags $origin_a $post_fetch_spec_a > "$path_async_output/post_fetch_a.txt" &
+        git fetch $origin_a $post_fetch_spec_a > "$path_async_output/post_fetch_a.txt" &
         pid_post_fetch_a=$!
-        git fetch --no-tags $origin_b $post_fetch_spec_b > "$path_async_output/post_fetch_b.txt" &
+        git fetch $origin_b $post_fetch_spec_b > "$path_async_output/post_fetch_b.txt" &
         pid_post_fetch_b=$!
         
         post_fetch_report_a="> Post-fetch $origin_a "
@@ -315,12 +315,12 @@ function sync_pass(){
         if [[ -n "$post_fetch_spec_a" ]]; then
             echo;echo "> Post-fetch $origin_a (sync)"
             echo $post_fetch_spec_a
-            git fetch --no-tags $origin_a $post_fetch_spec_a
+            git fetch $origin_a $post_fetch_spec_a
         fi;
         if [[ -n "$post_fetch_spec_b" ]]; then
             echo;echo "> Post-fetch $origin_b (sync)"
             echo $post_fetch_spec_b
-            git fetch --no-tags $origin_b $post_fetch_spec_b
+            git fetch $origin_b $post_fetch_spec_b
         fi;
     fi;
 }

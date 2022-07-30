@@ -160,7 +160,7 @@ Probably this is not a good idea to specify here the `master` branch name becaus
 * It has protections from an occasional deletion of your entire remote repository.
 * Arbitrary Git-history rewriting is supported.
 * Within a single installation, **git-repo-sync** can synchronize as many pairs of Git-repositories as you want. Every sync pair is a sync project for **git-repo-sync**.
-* **git-repo-sync** doesn't synchronize Git-tags because some popular Git-servers block manipulations with Git-tags.
+* Normally, **git-repo-sync** doesn't synchronize Git-tags because some popular Git-servers block manipulations with Git-tags. This fork **does** sync tags.
 * **git-repo-sync** doesn't attempt to do Git-merge or rebase.
 
 ### Support Operations
